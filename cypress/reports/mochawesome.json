@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-27T15:40:07.074Z",
+    "end": "2025-05-27T15:40:15.396Z",
+    "duration": 8322,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "84c83766-5179-4f71-b542-f1fae3b8af8d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\amazon\\search-product.js",
+      "file": "cypress\\e2e\\amazon\\search-product.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "32744fa1-7d8f-4361-89b1-6c5066679405",
+          "title": "Amazon Search - Validasi Nama dan Harga Produk",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cari produk dan validasi nama serta harga item",
+              "fullTitle": "Amazon Search - Validasi Nama dan Harga Produk Cari produk dan validasi nama serta harga item",
+              "timedOut": null,
+              "duration": 6095,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_amazonPage.default.searchBox(this.amazonData.search.keyword);\n_amazonPage.default.searchButton();\ncy.wait(3000);\n//sort by high to low\n_amazonPage.default.sortByHighToLow();\ncy.wait(3000);\n//pilih produk paling kanan baris pertama yang non sponsor\n_amazonPage.default.clickRightmostItemOnFirstRow();\ncy.get('@selectedProduct').then(selectedProduct => {\n  _amazonPage.default.verifyProductDetails(selectedProduct);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#twotabsearchtextbox`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#twotabsearchtextbox`, but never found it.\n    at amazonPage.searchBox (webpack://final-project-e2e/./cypress/pages/amazon-page.js:5:7)\n    at Context.eval (webpack://final-project-e2e/./cypress/e2e/amazon/search-product.js:10:15)",
+                "diff": null
+              },
+              "uuid": "7542ffdb-afd0-4c39-8b20-c5471e4eb37e",
+              "parentUUID": "32744fa1-7d8f-4361-89b1-6c5066679405",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7542ffdb-afd0-4c39-8b20-c5471e4eb37e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6095,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
