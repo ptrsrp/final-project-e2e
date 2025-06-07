@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-07T11:16:34.481Z",
+    "end": "2025-06-07T11:18:28.255Z",
+    "duration": 113774,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7411826a-65f7-450b-9ee2-e127b408ea1c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\agoda\\flight-booking.js",
+      "file": "cypress\\e2e\\agoda\\flight-booking.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f0331b4f-728a-4ab9-8f5c-02ee8073f133",
+          "title": "Agoda Flight Booking",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Booking penerbangan dari Jakarta ke Singapore dengan Malaysia Air",
+              "fullTitle": "Agoda Flight Booking Booking penerbangan dari Jakarta ke Singapore dengan Malaysia Air",
+              "timedOut": null,
+              "duration": 111411,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const tomorrow = new Date();\ntomorrow.setDate(tomorrow.getDate() + 1);\n_homePage.default.visit();\n_homePage.default.chooseFlightTab();\n_homePage.default.enterOrigin(this.agodaData.flight.origin);\n_homePage.default.enterDestination(this.agodaData.flight.destination);\n_homePage.default.selectDate(tomorrow);\n_homePage.default.searchFlight();\ncy.wait(5000);\n_flightResultPage.default.filterByAirline(this.agodaData.flight.airline);\ncy.wait(5000);\n_flightResultPage.default.sortFlight();\ncy.wait(5000);\n_flightResultPage.default.storeFlightTimes();\n_flightResultPage.default.chooseEarliestFlight();\n_passengerDetailPage.default.fillPassengerDetails(this.agodaData.dataPassenger);\n_passengerDetailPage.default.storeTotalPrice();\n_passengerDetailPage.default.continueToPayment();\ncy.get('body').then($body => {\n  if ($body.find('.aec39-items-baseline > .aec39-bg-generic-base-transparent').length > 0) {\n    cy.get('.aec39-items-baseline > .aec39-bg-generic-base-transparent').click();\n  }\n});\n_paymentPage.default.validateFlightTimesOnPaymentPage();\nconst fullName = `${this.agodaData.dataPassenger.firstName} ${this.agodaData.dataPassenger.lastName}`;\n_paymentPage.default.validatePassengerName(fullName);\n_paymentPage.default.validateTotalPrice();",
+              "err": {},
+              "uuid": "e1838b4d-d9cd-4750-9fdf-00e9ca5c7d96",
+              "parentUUID": "f0331b4f-728a-4ab9-8f5c-02ee8073f133",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e1838b4d-d9cd-4750-9fdf-00e9ca5c7d96"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 111411,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

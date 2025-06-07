@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-07T11:04:21.466Z",
+    "end": "2025-06-07T11:04:59.637Z",
+    "duration": 38171,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b75b3c2c-b9a9-414e-bdd8-bf0e86fd18ae",
+      "title": "",
+      "fullFile": "cypress\\e2e\\amazon\\search-product.js",
+      "file": "cypress\\e2e\\amazon\\search-product.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c56598e3-71f6-4aa1-a7dc-1601e638b768",
+          "title": "Amazon Search - Validasi Nama dan Harga Produk",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cari produk dan validasi nama serta harga item",
+              "fullTitle": "Amazon Search - Validasi Nama dan Harga Produk Cari produk dan validasi nama serta harga item",
+              "timedOut": null,
+              "duration": 34712,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_amazonPage.default.searchBox(this.amazonData.search.keyword);\n_amazonPage.default.searchButton();\ncy.wait(3000);\n//sort by high to low\n_amazonPage.default.sortByHighToLow();\ncy.wait(3000);\n//pilih produk paling kanan baris pertama yang non sponsor\n_amazonPage.default.clickRightmostItemOnFirstRow();\ncy.get('@selectedProduct').then(selectedProduct => {\n  _amazonPage.default.verifyProductDetails(selectedProduct);\n});",
+              "err": {},
+              "uuid": "7b38275e-dee4-4be2-8aab-62fb093cb38a",
+              "parentUUID": "c56598e3-71f6-4aa1-a7dc-1601e638b768",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7b38275e-dee4-4be2-8aab-62fb093cb38a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 34712,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,9 +1,6 @@
 import youtubePage from '../../pages/youtube-page';
 
 describe('Youtube Trending Movies - Validasi Movie Trending No. 3', function () {
-  beforeEach(function () {
-    cy.visit(Cypress.env('youtubeBaseUrl'));
-  });
   it('Cari movie trending no. 3 dan validasi judul serta nama channel', function () {
     youtubePage.visit();
     cy.wait(5000);

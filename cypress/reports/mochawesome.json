@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-06-07T10:59:33.885Z",
+    "end": "2025-06-07T11:00:49.540Z",
+    "duration": 75655,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2972926f-102b-4f1d-bffe-e60f7409db91",
+      "title": "",
+      "fullFile": "cypress\\e2e\\agoda\\flight-booking.js",
+      "file": "cypress\\e2e\\agoda\\flight-booking.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "545b1804-01fb-4b81-b501-f6e6857633b6",
+          "title": "Agoda Flight Booking",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Booking penerbangan dari Jakarta ke Singapore dengan Batik Air",
+              "fullTitle": "Agoda Flight Booking Booking penerbangan dari Jakarta ke Singapore dengan Batik Air",
+              "timedOut": null,
+              "duration": 72899,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const tomorrow = new Date();\ntomorrow.setDate(tomorrow.getDate() + 1);\n_homePage.default.visit();\n_homePage.default.chooseFlightTab();\n_homePage.default.enterOrigin(this.agodaData.flight.origin);\n_homePage.default.enterDestination(this.agodaData.flight.destination);\n_homePage.default.selectDate(tomorrow);\n_homePage.default.searchFlight();\ncy.wait(5000);\n_flightResultPage.default.filterByAirline(this.agodaData.flight.airline);\ncy.wait(5000);\n_flightResultPage.default.sortFlight();\ncy.wait(5000);\n_flightResultPage.default.storeFlightTimes();\n_flightResultPage.default.chooseEarliestFlight();\n_passengerDetailPage.default.storeTotalPrice();\n_passengerDetailPage.default.fillPassengerDetails(this.agodaData.dataPassenger);\n_passengerDetailPage.default.continueToPayment();\ncy.get('body').then($body => {\n  if ($body.find('.aec39-items-baseline > .aec39-bg-generic-base-transparent').length > 0) {\n    cy.get('.aec39-items-baseline > .aec39-bg-generic-base-transparent').click();\n  }\n});\n_paymentPage.default.validateFlightTimesOnPaymentPage();\nconst fullName = `${this.agodaData.dataPassenger.firstName} ${this.agodaData.dataPassenger.lastName}`;\n_paymentPage.default.validatePassengerName(fullName);\n_paymentPage.default.validateTotalPrice();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `dd[data-component=\"mob-flight-price-total-desc\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `dd[data-component=\"mob-flight-price-total-desc\"]`, but never found it.\n    at passengerDetailPage.storeTotalPrice (webpack://final-project-e2e/./cypress/pages/agoda/passenger-detail-page.js:99:7)\n    at Context.eval (webpack://final-project-e2e/./cypress/e2e/agoda/flight-booking.js:30:24)",
+                "diff": null
+              },
+              "uuid": "d60abc5c-1482-4691-9a96-e9f79d38cbc1",
+              "parentUUID": "545b1804-01fb-4b81-b501-f6e6857633b6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d60abc5c-1482-4691-9a96-e9f79d38cbc1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 72899,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

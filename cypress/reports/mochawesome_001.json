@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-06-07T11:00:52.375Z",
+    "end": "2025-06-07T11:01:49.274Z",
+    "duration": 56899,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2a28988e-bfd2-4d8f-b04d-e7b7848b9a84",
+      "title": "",
+      "fullFile": "cypress\\e2e\\amazon\\search-product.js",
+      "file": "cypress\\e2e\\amazon\\search-product.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d7980179-951e-4efe-a3c4-af05c4562145",
+          "title": "Amazon Search - Validasi Nama dan Harga Produk",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cari produk dan validasi nama serta harga item",
+              "fullTitle": "Amazon Search - Validasi Nama dan Harga Produk Cari produk dan validasi nama serta harga item",
+              "timedOut": null,
+              "duration": 52999,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_amazonPage.default.searchBox(this.amazonData.search.keyword);\n_amazonPage.default.searchButton();\ncy.wait(3000);\n//sort by high to low\n_amazonPage.default.sortByHighToLow();\ncy.wait(3000);\n//pilih produk paling kanan baris pertama yang non sponsor\n_amazonPage.default.clickRightmostItemOnFirstRow();\ncy.get('@selectedProduct').then(selectedProduct => {\n  _amazonPage.default.verifyProductDetails(selectedProduct);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#productTitle`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#productTitle`, but never found it.\n    at amazonPage.verifyProductDetails (webpack://final-project-e2e/./cypress/pages/amazon-page.js:69:7)\n    at Context.eval (webpack://final-project-e2e/./cypress/e2e/amazon/search-product.js:21:17)\n    at getRet (https://www.amazon.com/__cypress/runner/cypress_runner.js:120576:20)\n    at tryCatcher (https://www.amazon.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.amazon.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.amazon.com/__cypress/runner/cypress_runner.js:120587:66)\n    at Context.then (https://www.amazon.com/__cypress/runner/cypress_runner.js:120838:21)\n    at wrapped (https://www.amazon.com/__cypress/runner/cypress_runner.js:141133:19)",
+                "diff": null
+              },
+              "uuid": "26f525a9-e3f3-45d8-8849-084e6340fa4e",
+              "parentUUID": "d7980179-951e-4efe-a3c4-af05c4562145",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "26f525a9-e3f3-45d8-8849-084e6340fa4e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 52999,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

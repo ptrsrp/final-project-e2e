@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-07T11:06:15.365Z",
+    "end": "2025-06-07T11:06:54.116Z",
+    "duration": 38751,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a83a0f02-f977-4dbb-b27b-e6f62f74bcb6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\youtube\\trending-movies.js",
+      "file": "cypress\\e2e\\youtube\\trending-movies.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "53f14c34-b319-4b58-9f6d-70049bf1ba4b",
+          "title": "Youtube Trending Movies - Validasi Movie Trending No. 3",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cari movie trending no. 3 dan validasi judul serta nama channel",
+              "fullTitle": "Youtube Trending Movies - Validasi Movie Trending No. 3 Cari movie trending no. 3 dan validasi judul serta nama channel",
+              "timedOut": null,
+              "duration": 35315,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_youtubePage.default.visit();\ncy.wait(5000);\n_youtubePage.default.clickTrending();\ncy.wait(5000);\n_youtubePage.default.selectCategoryTrending('Film');\ncy.wait(5000);\n_youtubePage.default.getVideoInfo(2).then(({\n  title,\n  channel\n}) => {\n  // cy.log('Judul:', title);\n  // cy.log('Channel:', channel);\n  _youtubePage.default.clickVideo(2);\n  cy.wait(5000);\n  _youtubePage.default.getTitle().should('eq', title);\n  _youtubePage.default.getChannel().should('eq', channel);\n});",
+              "err": {},
+              "uuid": "9d242e2e-cae1-4006-ba62-1f3aefe212b7",
+              "parentUUID": "53f14c34-b319-4b58-9f6d-70049bf1ba4b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9d242e2e-cae1-4006-ba62-1f3aefe212b7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35315,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

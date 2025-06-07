@@ -1,0 +1,30 @@
+{
+  "dataPassenger": {
+    "firstName": "abc",
+    "lastName": "abc",
+    "email": "abc@test.com",
+    "country": "Indonesia",
+    "phone": "888888881",
+    "gender": "Wanita",
+    "birthDate": {
+      "day": "16",
+      "month": "September",
+      "year": "2000"
+    },
+    "nationality": "Indonesia",
+    "passport": {
+      "number": "A12345678",
+      "expiry": {
+        "day": "01",
+        "month": "Januari",
+        "year": "2027"
+      },
+      "country": "Indonesia"
+    }
+  },
+  "flight": {
+    "origin": "Jakarta",
+    "destination": "Singapore",
+    "airline": "Malaysia Airlines"
+  }
+}

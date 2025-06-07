@@ -14,12 +14,12 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx,feature}',
     video: true,
     screenshotOnRunFailure: true,
-    // reporter: 'mochawesome',
-    // reporterOptions: {
-    //   reportDir: 'cypress/reports',
-    //   overwrite: false,
-    //   html: true,
-    //   json: true,
-    // },
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: true,
+      json: true,
+    },
   },
 });
